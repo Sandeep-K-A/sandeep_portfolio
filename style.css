@@ -15,14 +15,6 @@
   src: url("/fonts/montserrat-v31-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/*colors*/
-
-:root {
-  --c-black: #0d0d0d;
-
-  --color-main-bg: var(--c-black);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,7 +24,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: white;
+  color: whitesmoke;
 
   background:
     linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
@@ -44,7 +36,7 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(140, 135, 135);
 }
 
 img {
@@ -67,7 +59,7 @@ img {
     top: 16px;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 20px 28px;
+    padding: 15px 28px;
 
     display: flex;
     justify-content: space-between;
@@ -114,5 +106,44 @@ img {
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+  }
+}
+
+.hero__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  margin-block: 70px;
+
+  .hero__tag {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 14px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .hero__tag h2 {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .hero__title{
+    font-size: calc(134 / 16 * 1rem);
+    font-weight: 700;
+  }
+
+  .hero__title span{
+    display:block;
+  }
+
+  .hero__para{
+    line-height: 1.5rem;
+     color: rgb(140, 135, 135);
+     font-family: monospace;
+     font-size: 1rem;
   }
 }
