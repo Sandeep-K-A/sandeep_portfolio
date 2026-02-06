@@ -43,6 +43,11 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.highlight{
+color:rgb(47, 32, 213);
+}
+
 .wrapper {
   max-width: 1200px;
   margin-inline: auto;
@@ -86,7 +91,7 @@ img {
   }
   .topnav__logo {
     font-size: 1.4rem;
-    color: rgb(138, 88, 255);
+    color: rgb(47, 32, 213);
   }
   .topnav__text {
     font-size: 0.6rem;
