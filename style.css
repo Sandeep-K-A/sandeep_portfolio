@@ -15,7 +15,8 @@
   src: url("./fonts/montserrat-v31-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-* {
+*,*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
 }
