@@ -15,7 +15,8 @@
   src: url("./fonts/montserrat-v31-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-*,*::before,
+*,
+*::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
@@ -47,6 +48,29 @@ img {
 
 .highlight {
   color: rgb(47, 32, 213);
+}
+
+.icon_wrap {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    135deg,
+    rgb(138, 88, 255) 0%,
+    rgb(47, 32, 213) 100%
+  );
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 10px 30px rgba(138, 88, 255, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.icon-wrap svg {
+  width: 36px;
+  height: 36px;
+  fill: white;
 }
 
 .wrapper {
@@ -92,6 +116,7 @@ img {
   }
   .topnav__logo {
     font-size: 1.4rem;
+    font-weight: 700;
     color: rgb(47, 32, 213);
   }
   .topnav__text {
@@ -124,13 +149,14 @@ img {
   margin-block: 70px;
 
   .hero__tag {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 16px;
     background: rgba(255, 255, 255, 0.06);
-    padding: 14px;
-    border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
-  .hero__tag h2 {
+  .hero__tag p {
     font-size: 0.6rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -154,7 +180,7 @@ img {
 }
 
 .about__section {
-  margin-block: 50px;
+  margin-block: 100px;
 }
 
 .about__wrapper {
@@ -192,7 +218,7 @@ img {
     background: transparent;
   }
 
-  .about__tag span {
+  .about__tag h2 {
     font-size: calc(12 / 16 * 1rem);
     font-weight: 700;
     letter-spacing: 0.05rem;
@@ -255,5 +281,103 @@ img {
       height: auto;
       object-fit: contain;
     }
+  }
+}
+
+.service__section {
+  margin-block: 100px;
+}
+
+.service__wrapper {
+  width: calc(100% - 180px);
+  margin-inline: auto;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  .service__tag {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .service__tag p {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .service__header {
+    text-align: center;
+  }
+
+  .service__heading span {
+    display: block;
+  }
+
+  .service__heading_text {
+    font-size: calc(72 / 16 * 1rem);
+    font-weight: 700;
+    letter-spacing: -3.6px;
+    line-height: 72px;
+  }
+
+  .service__para {
+    font-family: monospace;
+    font-size: calc(14 / 16 * 1rem);
+    color: rgb(135, 135, 140);
+    line-height: 22.75px;
+    margin-block-start: 16px;
+  }
+
+  .service__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+  }
+
+  .service__card {
+    max-width: 425px;
+    height: auto;
+    background: rgba(49, 49, 49, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+
+    padding: 32px;
+    color: whitesmoke;
+
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .service__card h3 {
+    font-size: calc(20 / 16 * 1rem);
+    font-weight: bold;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .service__card p {
+    font-family: monospace;
+    font-size: calc(14 / 16 * 1rem);
+    color: rgb(135, 135, 140);
+    line-height: 22.75px;
+    /* margin-block-start: 16px; */
   }
 }
