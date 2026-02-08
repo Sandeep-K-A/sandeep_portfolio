@@ -22,10 +22,10 @@
               <a class="topnav__link" href="#about_section">About</a>
             </li>
             <li class="topnav__item">
-              <a class="topnav__link" href="#projects_section">Work</a>
+              <a class="topnav__link" href="#projects_section">Projects</a>
             </li>
             <li class="topnav__item">
-              <a class="topnav__link" href="">Contact</a>
+              <a class="topnav__link" href="#contact_section">Contact</a>
             </li>
           </ul>
         </nav>
@@ -250,9 +250,9 @@
                 <!-- Tech stack + button -->
                 <div class="project__footer">
                   <ul class="project__techstack">
-                    <li class="project__techstack_item">React</li>
-                    <li class="project__techstack_item">Tailwind CSS</li>
-                    <li class="project__techstack_item">JavaScript</li>
+                    <li class="glass_pill">React</li>
+                    <li class="glass_pill">Tailwind CSS</li>
+                    <li class="glass_pill">JavaScript</li>
                   </ul>
                   <a
                     href="https://sandeep-k-a.github.io/Responsive/"
@@ -278,7 +278,7 @@
           </div>
         </div>
       </section>
-      <section class="contact__section">
+      <section id="contact_section" class="contact__section">
         <div class="contact__wrapper">
           <div class="contact__block_1">
             <div class="contact__tag">
@@ -317,14 +317,122 @@
             </div>
           </div>
           <div class="contact__block_2">
-            <h4 class="contact__form_heading">What can i help you with?</h4>
-            <form action="">
-              <label class="hidden_label" for=""></label>
+            <form class="contact__form">
+              <div class="contact__project_type">
+                <h4 class="contact__form_heading">What can I help you with?</h4>
+                <div class="contact__options">
+                  <label class="glass_pill contact__option">
+                    <input
+                      type="radio"
+                      name="project_type"
+                      value="Web_development"
+                      required
+                    />
+                    Web Development
+                  </label>
+                  <label class="contact__option glass_pill">
+                    <input type="radio" name="project_type" value="SEO" />
+                    SEO
+                  </label>
+                  <label class="contact__option glass_pill">
+                    <input type="radio" name="project_type" value="other" />
+                    other
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__input_grid">
+                <div class="contact__input_group">
+                  <label for="firstname" class="contact__form_label"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    class="contact__input"
+                    placeholder="Jane"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                    pattern="[A-Za-z\s]+"
+                    title="Only letters allowed"
+                  />
+                </div>
+                <div class="contact__input_group">
+                  <label for="lastname" class="contact__form_label"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    class="contact__input"
+                    placeholder="Cooper"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                    pattern="[A-Za-z\s]+"
+                    title="Only letters allowed"
+                  />
+                </div>
+
+                <div class="contact__input_group">
+                  <label for="phone" class="contact__form_label">Phone</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    class="contact__input"
+                    placeholder="+91 98765 43210"
+                    required
+                    pattern="^[+]?[0-9\s]{10,15}$"
+                    title="Enter a valid phone number"
+                  />
+                </div>
+                <div class="contact__input_group">
+                  <label for="email" class="contact__form_label">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="contact__input"
+                    placeholder="jane@mail.com"
+                    required
+                  />
+                </div>
+
+                <div class="contact__input_group contact__input_group--full">
+                  <label for="message" class="contact__form_label"
+                    >Message</label
+                  >
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="6"
+                    class="contact__input"
+                    placeholder="Type your message"
+                    required
+                    minlength="10"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="contact__submit_btn contact__input_group--full"
+                >
+                  Send Message
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer__bottom">
+        <p>© 2026 Sandeep K A. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
