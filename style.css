@@ -107,17 +107,18 @@ img {
   z-index: 100;
 
   .topnav__wrapper {
-    position: sticky;
+    position: relative;
     top: 16px;
-    margin: 0 auto;
     max-width: 1200px;
     padding: 15px 28px;
+    margin-inline: 25px;
 
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    margin-block-start: 40px;
+    margin-block-start: 20px;
 
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(14px);
@@ -132,12 +133,45 @@ img {
 
     z-index: 100;
   }
-  .topnav__home_container {
+
+  .topnav__wrapper button{
+    background-color: transparent;
+    border: 0;
+  }
+
+  .topnav__wrapper nav{
+    position:absolute;
+    top: 100%;
+    left: 0;
+    width:100%;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-top: 20px;
+
+    background: rgba(12, 12, 12, 0.986);
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  }
+
+  button[aria-expanded="true"] + nav{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+    .topnav__home_container {
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
   }
   .topnav__logo {
-    font-size: 1.4rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: rgb(47, 32, 213);
   }
@@ -147,17 +181,67 @@ img {
   }
   .topnav__links {
     display: flex;
+    flex-direction: column;
     gap: 20px;
     list-style: none;
-    padding: 0;
+    padding: 20px 0;
+    margin-inline: 25px;
   }
-  .topnav__item {
+
+    .topnav__item {
   }
   .topnav__link {
-    font-size: 0.8rem;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 700;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.05em;
     text-transform: uppercase;
+    cursor: pointer;
+    transition:color 0.3s ease
+  }
+
+   .topnav__link:hover{
+    color: #ffff;
+   }
+
+  @media (min-width:1024px){
+    .topnav__wrapper button{
+      display:none;
+    }
+
+    .topnav__wrapper{
+      margin-block-start: 40px;
+      margin: 0 auto;
+    }
+
+    .topnav__wrapper nav{
+      position:static;
+      width: auto;
+      opacity:1;
+      transform:none;
+      pointer-events: auto;
+      transition:none;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      background: none;
+      margin-top: 0;
+    };
+
+    .topnav__logo{
+      font-size: 1.4rem;
+    }
+
+    .topnav__links{
+      flex-direction: row;
+       margin-inline: 0;
+       padding: 0;
+    }
+
+    .topnav__link{
+      font-size: 0.8rem;
+       /* letter-spacing: 0.05em; */
+    }
   }
 }
 
