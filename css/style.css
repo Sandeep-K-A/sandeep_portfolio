@@ -1043,6 +1043,11 @@ img {
   color: white;
   font-size: 0.9rem;
   outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.contact__input:focus{
+ border-color: rgb(47, 32, 213);
 }
 
 .contact__input::placeholder {
