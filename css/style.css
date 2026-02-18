@@ -70,6 +70,8 @@ img {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition: border-color 0.35s ease;
 }
 
 .icon_wrap {
@@ -87,7 +89,7 @@ img {
   box-shadow:
     0 10px 30px rgba(138, 88, 255, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-       transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
 }
 
@@ -97,23 +99,23 @@ img {
   fill: white;
 }
 
-.service-underline{
+.service-underline {
   width: 50px;
   height: 1.5px;
   background: linear-gradient(
-  90deg,
-  rgba(47, 32, 213, 0.549),
-  rgba(135, 135, 140, 0.35)
-);
+    90deg,
+    rgba(47, 32, 213, 0.549),
+    rgba(135, 135, 140, 0.35)
+  );
   border-radius: 4px;
-  transition: width 0.4s cubic-bezier(.4,0,.2,1);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(30px) scale(0.98);
-  transition: 
-    transform 0.7s cubic-bezier(.22,.61,.36,1),
+  transition:
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
     opacity 0.7s ease;
 }
 
@@ -121,8 +123,6 @@ img {
   opacity: 1;
   transform: translateY(0);
 }
-
-
 
 .wrapper {
   max-width: 1200px;
@@ -163,20 +163,22 @@ img {
     z-index: 100;
   }
 
-  .topnav__wrapper button{
+  .topnav__wrapper button {
     background-color: transparent;
     border: 0;
   }
 
-  .topnav__wrapper nav{
-    position:absolute;
+  .topnav__wrapper nav {
+    position: absolute;
     top: 100%;
     left: 0;
-    width:100%;
+    width: 100%;
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
     margin-top: 20px;
 
     background: rgba(12, 12, 12, 0.986);
@@ -188,13 +190,13 @@ img {
       inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   }
 
-  button[aria-expanded="true"] + nav{
+  button[aria-expanded="true"] + nav {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
   }
 
-    .topnav__home_container {
+  .topnav__home_container {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
@@ -217,7 +219,7 @@ img {
     margin-inline: 25px;
   }
 
-    .topnav__item {
+  .topnav__item {
   }
   .topnav__link {
     font-size: 1.5rem;
@@ -226,50 +228,50 @@ img {
     letter-spacing: -0.05em;
     text-transform: uppercase;
     cursor: pointer;
-    transition:color 0.3s ease
+    transition: color 0.3s ease;
   }
 
-   .topnav__link:hover{
+  .topnav__link:hover {
     color: #ffff;
-   }
+  }
 
-  @media (min-width:1024px){
-    .topnav__wrapper button{
-      display:none;
+  @media (min-width: 1024px) {
+    .topnav__wrapper button {
+      display: none;
     }
 
-    .topnav__wrapper{
+    .topnav__wrapper {
       margin-block-start: 40px;
       margin: 0 auto;
     }
 
-    .topnav__wrapper nav{
-      position:static;
+    .topnav__wrapper nav {
+      position: static;
       width: auto;
-      opacity:1;
-      transform:none;
+      opacity: 1;
+      transform: none;
       pointer-events: auto;
-      transition:none;
+      transition: none;
       border-radius: 0;
       border: none;
       box-shadow: none;
       background: none;
       margin-top: 0;
-    };
+    }
 
-    .topnav__logo{
+    .topnav__logo {
       font-size: 1.4rem;
     }
 
-    .topnav__links{
+    .topnav__links {
       flex-direction: row;
-       margin-inline: 0;
-       padding: 0;
+      margin-inline: 0;
+      padding: 0;
     }
 
-    .topnav__link{
+    .topnav__link {
       font-size: 0.8rem;
-       /* letter-spacing: 0.05em; */
+      /* letter-spacing: 0.05em; */
     }
   }
 }
@@ -481,7 +483,7 @@ img {
     height: auto;
     background: rgba(49, 49, 49, 0.18);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);;
+    -webkit-backdrop-filter: blur(12px);
 
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
@@ -504,33 +506,31 @@ img {
   }
 
   .service__card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    1200px circle at var(--x, 50%) var(--y, 50%),
-    rgba(91, 91, 255, 0.12),
-    transparent 40%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      1200px circle at var(--x, 50%) var(--y, 50%),
+      rgba(91, 91, 255, 0.12),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
 
-.service__card:hover::before {
-  opacity: 1;
-}
-
+  .service__card:hover::before {
+    opacity: 1;
+  }
 
   .service__card:hover .service-underline {
-  width: 80px;
-  background: linear-gradient(90deg, #5b5bff, #7aa2ff);
-}
+    width: 80px;
+    background: linear-gradient(90deg, #5b5bff, #7aa2ff);
+  }
 
-.service__card:hover .icon_wrap  {
-  transform: scale(1.12) rotate(6deg);
-}
-
+  .service__card:hover .icon_wrap {
+    transform: scale(1.12) rotate(6deg);
+  }
 
   .service__card h3 {
     font-size: calc(20 / 16 * 1rem);
@@ -605,6 +605,19 @@ img {
 
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
+
+    position: relative;
+    transition:
+      transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .project__item:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 12px 32px rgba(47, 32, 213, 0.25),
+      0 0 0 1px rgba(47, 32, 213, 0.35);
   }
 
   .project__image {
@@ -620,6 +633,11 @@ img {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .project__item:hover .project__image img {
+    transform: scale(1.06) translateY(-2px);
   }
 
   .project__card {
@@ -686,6 +704,10 @@ img {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.12);
+
+    transition:
+      border-color 0.35s ease,
+      color 0.35s ease;
   }
 
   .project__title {
@@ -693,6 +715,7 @@ img {
     font-weight: 600;
     letter-spacing: -3px;
     line-height: 60px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .project__subtitle {
@@ -762,6 +785,35 @@ img {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .project__link svg {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project__item:hover .project__number {
+    border-color: rgb(47, 32, 213);
+    color: rgb(47, 32, 213);
+  }
+
+  .project__item:hover .project__title {
+    background: linear-gradient(
+      90deg,
+      rgb(47, 32, 213),
+      rgb(99, 102, 241),
+      rgb(129, 140, 248)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .project__item:hover .glass_pill {
+    border-color: rgba(47, 32, 213, 0.804);
+  }
+
+  .project__item:hover svg {
+    transform: translateX(4px);
   }
 }
 
@@ -856,6 +908,12 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 15px 15px;
     margin-top: 8px;
+
+    transition: border-color 0.3s ease;
+  }
+
+  .contact__email_card:hover {
+    border-color: rgba(47, 32, 213, 0.5);
   }
 
   .email_icon {
@@ -863,9 +921,10 @@ img {
     height: 50px;
     border-radius: 14px;
     background: rgb(47, 32, 213);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .email_icon svg{
+  .email_icon svg {
     width: 24px;
     height: 24px;
   }
@@ -888,6 +947,15 @@ img {
   .email__details p.email__address {
     text-transform: lowercase;
     color: white;
+    transition: color 0.3s ease;
+  }
+
+  .contact__email_card:hover .email_icon {
+    transform: scale(1.08);
+  }
+
+  .contact__email_card:hover .email__address {
+    color: rgb(47, 32, 213);
   }
 }
 
@@ -1003,9 +1071,21 @@ textarea.contact__input {
   font-family: monospace;
   font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+
+.contact__submit_btn:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 14px 40px rgba(47, 32, 213, 0.35),
+    0 0 20px rgba(120, 140, 255, 0.45),
+    0 0 0 1px rgba(120, 140, 255, 0.5);
 }
 
 .footer {
